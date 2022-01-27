@@ -1,7 +1,20 @@
 import math
 import os
-def letterChecker():
-
+def letterChecker(string):
+    vowelCounter = 0
+    consonantCounter = 0
+    vowels = "AaEeIiOoUu"
+    for x in string:
+        if x in vowels:
+            vowelCounter=vowelCounter+1
+        else:
+            consonantCounter=consonantCounter+1
+    if vowelCounter > consonantCounter:
+        return "True"
+    if vowelCounter < consonantCounter:
+        return "False"
+    if vowelCounter == consonantCounter:
+        return "None"
 def cylinderVolume(h,r):
     volume=math.pi*h*r*r
     return volume
@@ -27,7 +40,8 @@ def createFolder():
         return "hw-3 has been created"
     else:
         return "hw-3 already exists"
-
+print(letterChecker("Ukulele"))
+print(letterChecker("Banjo"))
 print(cylinderVolume(2,3))
 print(divisionWithWarning(2,1))
 print(divisionWithWarning(2,0))
